@@ -6,10 +6,10 @@ export default function ContactPage() {
           <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
           Contact
         </span>
-        <h1 className="mt-4 font-serif text-4xl tracking-tight text-stone-900 sm:text-5xl dark:text-navy-100">
+        <h1 className="mt-4 font-serif text-4xl tracking-tight text-stone-900 sm:text-5xl">
           Get in Touch
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-stone-500 dark:text-navy-400">
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-stone-500">
           Questions about an order, sizing, or just want to say hello? We'd
           love to hear from you.
         </p>
@@ -19,20 +19,20 @@ export default function ContactPage() {
         {/* Contact info */}
         <div className="space-y-8">
           {[
-            { label: "Email", value: "hello@linenandloom.com" },
+            { label: "Email", value: "hello@comfortandco.com" },
             { label: "Phone", value: "+1 (800) 555-0192" },
             { label: "Studio", value: "128 Weaver Street, Suite 4\nPortland, OR 97201" },
             { label: "Support Hours", value: "Mon – Fri, 9:00 AM – 6:00 PM (PST)" },
           ].map((item) => (
             <div key={item.label} className="flex gap-4">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-50 text-accent-500 dark:bg-accent-500/10">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent-50 text-accent-500">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-4.5 w-4.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                 </svg>
               </span>
               <div>
-                <h3 className="text-xs font-semibold uppercase tracking-widest text-stone-900 dark:text-navy-100">{item.label}</h3>
-                <p className="mt-1 whitespace-pre-line text-sm text-stone-500 dark:text-navy-400">{item.value}</p>
+                <h3 className="text-xs font-semibold uppercase tracking-widest text-stone-900">{item.label}</h3>
+                <p className="mt-1 whitespace-pre-line text-sm text-stone-500">{item.value}</p>
               </div>
             </div>
           ))}
@@ -41,7 +41,7 @@ export default function ContactPage() {
         {/* Contact form */}
         <form className="card-premium space-y-5 p-8">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-stone-700 dark:text-navy-300">
+            <label htmlFor="name" className="block text-sm font-medium text-stone-700">
               Name
             </label>
             <input
@@ -53,7 +53,7 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-stone-700 dark:text-navy-300">
+            <label htmlFor="email" className="block text-sm font-medium text-stone-700">
               Email
             </label>
             <input
@@ -65,7 +65,7 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-stone-700 dark:text-navy-300">
+            <label htmlFor="message" className="block text-sm font-medium text-stone-700">
               Message
             </label>
             <textarea

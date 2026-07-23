@@ -12,7 +12,7 @@ export async function sendOrderConfirmationEmail(order: OrderWithItems) {
 
   try {
     await resend.emails.send({
-      from: process.env.EMAIL_FROM || "Comfort & Co <onboarding@resend.dev>",
+      from: process.env.EMAIL_FROM || "Comfort and Co <onboarding@resend.dev>",
       to: order.shippingEmail,
       subject: `Order Confirmed — #${order.id}`,
       react: OrderConfirmationEmail({

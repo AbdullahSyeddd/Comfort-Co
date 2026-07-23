@@ -48,11 +48,11 @@ export default function ProductCard({ id, image, title, price, size }: ProductCa
   };
 
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-stone-200/80 bg-white shadow-[0_2px_10px_rgba(28,25,23,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-stone-900/10 dark:border-navy-800 dark:bg-navy-900">
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-stone-200/80 bg-white shadow-[0_2px_10px_rgba(28,25,23,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-stone-900/10">
       {/* Humne poore card ko Link mein wrap kar diya hai */}
       <Link href={`/product/${id}`} className="flex flex-1 flex-col">
         {/* Image */}
-        <div className="relative aspect-[4/5] w-full overflow-hidden bg-stone-100 dark:bg-navy-800">
+        <div className="relative aspect-[4/5] w-full overflow-hidden bg-stone-100">
           <Image
             src={image}
             alt={title}
@@ -65,10 +65,10 @@ export default function ProductCard({ id, image, title, price, size }: ProductCa
           <button
             onClick={handleToggleWishlist}
             aria-label={wishlisted ? "Remove from wishlist" : "Save for later"}
-            className={`absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 shadow-sm transition-all duration-300 dark:bg-navy-900/90 ${
+            className={`absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 shadow-sm transition-all duration-300 ${
               wishlisted
                 ? "text-accent-500 opacity-100"
-                : "text-stone-500 opacity-0 hover:text-accent-500 group-hover:opacity-100 dark:text-navy-400"
+                : "text-stone-500 opacity-0 hover:text-accent-500 group-hover:opacity-100"
             }`}
           >
             <svg
@@ -84,7 +84,7 @@ export default function ProductCard({ id, image, title, price, size }: ProductCa
           </button>
 
           {/* Hover overlay Add to Cart */}
-          <div className="absolute inset-x-0 bottom-0 translate-y-full bg-white/95 p-3 backdrop-blur-sm transition-transform duration-300 ease-out group-hover:translate-y-0 dark:bg-navy-900/95">
+          <div className="absolute inset-x-0 bottom-0 translate-y-full bg-white/95 p-3 backdrop-blur-sm transition-transform duration-300 ease-out group-hover:translate-y-0">
             <button
               onClick={handleAddToCart}
               className={`flex w-full items-center justify-center gap-2 rounded-full py-2.5 text-sm font-medium text-white transition-colors ${
@@ -107,9 +107,9 @@ export default function ProductCard({ id, image, title, price, size }: ProductCa
 
         {/* Details */}
         <div className="flex flex-1 flex-col gap-1 p-4">
-          <h3 className="text-sm font-medium text-stone-800 dark:text-navy-200">{title}</h3>
-          <p className="text-xs text-stone-400 dark:text-navy-500">{size}</p>
-          <p className="mt-1 font-serif text-lg text-stone-900 dark:text-navy-100">
+          <h3 className="text-sm font-medium text-stone-800">{title}</h3>
+          <p className="text-xs text-stone-400">{size}</p>
+          <p className="mt-1 font-serif text-lg text-stone-900">
             Rs. {price.toLocaleString()}
           </p>
         </div>

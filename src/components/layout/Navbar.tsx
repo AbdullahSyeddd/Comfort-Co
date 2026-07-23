@@ -5,7 +5,6 @@ import { useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
-import { useTheme } from "@/context/ThemeContext";
 import Image from "next/image";
 
 const navLinks = [
@@ -15,27 +14,6 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
-  return (
-    <button
-      onClick={toggleTheme}
-      className="rounded-full p-2.5 text-stone-700 transition-colors hover:bg-stone-100 dark:text-navy-300 dark:hover:bg-navy-800"
-      aria-label="Toggle theme"
-    >
-      {theme === "dark" ? (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-5 w-5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-6.364-.386 1.591-1.591M3 12h2.25m.386-6.364 1.591 1.591M12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5z" />
-        </svg>
-      ) : (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-5 w-5">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 008.997-5.998z" />
-        </svg>
-      )}
-    </button>
-  );
-}
-
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
@@ -44,16 +22,19 @@ export default function Navbar() {
   const { data: session, status } = useSession();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-stone-200/70 bg-white/80 backdrop-blur-lg dark:border-navy-800/70 dark:bg-navy-950/80">
+    <header className="sticky top-0 z-50 w-full border-b border-stone-200/70 bg-white/80 backdrop-blur-lg">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-<Image
-  src="/images/LOGO.png"
-  alt="Comfort & Co"
-  width={40}
-  height={40}
-  priority
-  className="h-9 w-9"
-/>
+        {/* Logo */}
+        <Link href="/" className="flex shrink-0 items-center" aria-label="Comfort and Co home">
+          <Image
+            src="/images/LOGO.png"
+            alt="Comfort and Co"
+            width={685}
+            height={651}
+            priority
+            className="h-10 w-auto object-contain md:h-11"
+          />
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-10 md:flex">
@@ -61,7 +42,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="group relative text-sm font-medium text-stone-600 transition-colors hover:text-stone-900 dark:text-navy-400 dark:hover:text-navy-100"
+              className="group relative text-sm font-medium text-stone-600 transition-colors hover:text-stone-900"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-accent-500 transition-all duration-300 group-hover:w-full" />
@@ -71,11 +52,9 @@ export default function Navbar() {
 
         {/* Right side: wishlist + cart + account + mobile toggle */}
         <div className="flex items-center gap-1">
-          <ThemeToggle />
-
           <Link
             href="/wishlist"
-            className="relative rounded-full p-2.5 text-stone-700 transition-colors hover:bg-stone-100 dark:text-navy-300 dark:hover:bg-navy-800"
+            className="relative rounded-full p-2.5 text-stone-700 transition-colors hover:bg-stone-100"
             aria-label="Wishlist"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-6 w-6">
@@ -90,7 +69,7 @@ export default function Navbar() {
 
           <Link
             href="/cart"
-            className="relative rounded-full p-2.5 text-stone-700 transition-colors hover:bg-stone-100 dark:text-navy-300 dark:hover:bg-navy-800"
+            className="relative rounded-full p-2.5 text-stone-700 transition-colors hover:bg-stone-100"
             aria-label="Cart"
           >
             <svg
@@ -120,17 +99,17 @@ export default function Navbar() {
               <>
                 <button
                   onClick={() => setAccountMenuOpen((v) => !v)}
-                  className="ml-1 flex h-9 w-9 items-center justify-center rounded-full bg-accent-100 text-sm font-semibold text-accent-600 transition-colors hover:bg-accent-200 dark:bg-accent-500/20 dark:text-accent-400 dark:hover:bg-accent-500/30"
+                  className="ml-1 flex h-9 w-9 items-center justify-center rounded-full bg-accent-100 text-sm font-semibold text-accent-600 transition-colors hover:bg-accent-200"
                   aria-label="Account menu"
                 >
                   {(session.user?.name || session.user?.email || "?").charAt(0).toUpperCase()}
                 </button>
                 {accountMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-44 animate-fade-up rounded-xl border border-stone-200/80 bg-white py-2 shadow-lg shadow-stone-900/10 dark:border-navy-800 dark:bg-navy-900">
+                  <div className="absolute right-0 mt-2 w-44 animate-fade-up rounded-xl border border-stone-200/80 bg-white py-2 shadow-lg shadow-stone-900/10">
                     <Link
                       href="/orders"
                       onClick={() => setAccountMenuOpen(false)}
-                      className="block px-4 py-2 text-sm text-stone-700 hover:bg-stone-50 dark:text-navy-300 dark:hover:bg-navy-800"
+                      className="block px-4 py-2 text-sm text-stone-700 hover:bg-stone-50"
                     >
                       My Orders
                     </Link>
@@ -139,7 +118,7 @@ export default function Navbar() {
                         setAccountMenuOpen(false);
                         signOut({ callbackUrl: "/" });
                       }}
-                      className="block w-full px-4 py-2 text-left text-sm text-stone-700 hover:bg-stone-50 dark:text-navy-300 dark:hover:bg-navy-800"
+                      className="block w-full px-4 py-2 text-left text-sm text-stone-700 hover:bg-stone-50"
                     >
                       Sign out
                     </button>
@@ -147,7 +126,7 @@ export default function Navbar() {
                 )}
               </>
             ) : (
-              <Link href="/login" className="ml-2 text-sm font-medium text-stone-600 hover:text-stone-900 dark:text-navy-400 dark:hover:text-navy-100">
+              <Link href="/login" className="ml-2 text-sm font-medium text-stone-600 hover:text-stone-900">
                 Log in
               </Link>
             )}
@@ -156,7 +135,7 @@ export default function Navbar() {
           {/* Mobile menu toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="rounded-md p-2 text-stone-700 hover:bg-stone-100 dark:text-navy-300 dark:hover:bg-navy-800 md:hidden"
+            className="rounded-md p-2 text-stone-700 hover:bg-stone-100 md:hidden"
             aria-label="Toggle menu"
           >
             <svg
@@ -179,24 +158,24 @@ export default function Navbar() {
 
       {/* Mobile nav panel */}
       {menuOpen && (
-        <nav className="flex animate-fade-up flex-col gap-1 border-t border-stone-200 bg-white px-6 py-4 dark:border-navy-800 dark:bg-navy-950 md:hidden">
+        <nav className="flex animate-fade-up flex-col gap-1 border-t border-stone-200 bg-white px-6 py-4 md:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="rounded-md px-3 py-2.5 text-sm font-medium text-stone-700 hover:bg-stone-50 dark:text-navy-300 dark:hover:bg-navy-900"
+              className="rounded-md px-3 py-2.5 text-sm font-medium text-stone-700 hover:bg-stone-50"
             >
               {link.label}
             </Link>
           ))}
-          <div className="my-1 border-t border-stone-200 dark:border-navy-800" />
+          <div className="my-1 border-t border-stone-200" />
           {status === "authenticated" ? (
             <>
               <Link
                 href="/orders"
                 onClick={() => setMenuOpen(false)}
-                className="rounded-md px-3 py-2.5 text-sm font-medium text-stone-700 hover:bg-stone-50 dark:text-navy-300 dark:hover:bg-navy-900"
+                className="rounded-md px-3 py-2.5 text-sm font-medium text-stone-700 hover:bg-stone-50"
               >
                 My Orders
               </Link>
@@ -205,7 +184,7 @@ export default function Navbar() {
                   setMenuOpen(false);
                   signOut({ callbackUrl: "/" });
                 }}
-                className="rounded-md px-3 py-2.5 text-left text-sm font-medium text-stone-700 hover:bg-stone-50 dark:text-navy-300 dark:hover:bg-navy-900"
+                className="rounded-md px-3 py-2.5 text-left text-sm font-medium text-stone-700 hover:bg-stone-50"
               >
                 Sign out
               </button>
@@ -215,14 +194,14 @@ export default function Navbar() {
               <Link
                 href="/login"
                 onClick={() => setMenuOpen(false)}
-                className="rounded-md px-3 py-2.5 text-sm font-medium text-stone-700 hover:bg-stone-50 dark:text-navy-300 dark:hover:bg-navy-900"
+                className="rounded-md px-3 py-2.5 text-sm font-medium text-stone-700 hover:bg-stone-50"
               >
                 Log in
               </Link>
               <Link
                 href="/signup"
                 onClick={() => setMenuOpen(false)}
-                className="rounded-md px-3 py-2.5 text-sm font-medium text-stone-700 hover:bg-stone-50 dark:text-navy-300 dark:hover:bg-navy-900"
+                className="rounded-md px-3 py-2.5 text-sm font-medium text-stone-700 hover:bg-stone-50"
               >
                 Sign up
               </Link>

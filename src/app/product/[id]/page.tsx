@@ -26,20 +26,20 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   }
 
   return (
-    <div className="min-h-screen bg-[#fdfcfa] py-14 dark:bg-navy-950">
+    <div className="min-h-screen bg-[#fdfcfa] py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
-        <nav className="mb-8 flex items-center gap-2 text-xs text-stone-400 dark:text-navy-500">
-          <Link href="/" className="hover:text-stone-600 dark:hover:text-navy-300">Home</Link>
+        <nav className="mb-8 flex items-center gap-2 text-xs text-stone-400">
+          <Link href="/" className="hover:text-stone-600">Home</Link>
           <span>/</span>
-          <Link href="/shop" className="hover:text-stone-600 dark:hover:text-navy-300">Shop</Link>
+          <Link href="/shop" className="hover:text-stone-600">Shop</Link>
           <span>/</span>
-          <span className="text-stone-600 dark:text-navy-400">{product.title}</span>
+          <span className="text-stone-600">{product.title}</span>
         </nav>
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Left Side: Bari Image */}
-          <div className="relative aspect-square w-full overflow-hidden rounded-3xl bg-stone-100 shadow-xl shadow-stone-900/5 dark:bg-navy-800 dark:shadow-black/30">
+          <div className="relative aspect-square w-full overflow-hidden rounded-3xl bg-stone-100 shadow-xl shadow-stone-900/5">
             <Image
               src={product.imageUrl}
               alt={product.title}
@@ -54,12 +54,12 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
               {product.size}
             </span>
-            <h1 className="mt-3 font-serif text-4xl tracking-tight text-stone-900 dark:text-navy-100">{product.title}</h1>
-            <p className="mt-4 font-serif text-2xl text-accent-600 dark:text-accent-400">Rs. {product.price.toLocaleString()}</p>
+            <h1 className="mt-3 font-serif text-4xl tracking-tight text-stone-900">{product.title}</h1>
+            <p className="mt-4 font-serif text-2xl text-accent-600">Rs. {product.price.toLocaleString()}</p>
 
             <div className="mt-6">
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-stone-900 dark:text-navy-100">Description</h3>
-              <p className="mt-3 text-base leading-relaxed text-stone-500 dark:text-navy-400">
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-stone-900">Description</h3>
+              <p className="mt-3 text-base leading-relaxed text-stone-500">
                 {product.description || "Premium quality bedsheet for a comfortable night's sleep. Woven with the finest cotton to ensure durability and softness."}
               </p>
             </div>
@@ -74,15 +74,15 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             />
 
             {/* Stock Status */}
-            <p className={`mt-4 flex items-center justify-center gap-1.5 text-center text-sm font-medium ${product.inStock ? 'text-green-700 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+            <p className={`mt-4 flex items-center justify-center gap-1.5 text-center text-sm font-medium ${product.inStock ? 'text-green-700' : 'text-red-600'}`}>
               <span className={`h-1.5 w-1.5 rounded-full ${product.inStock ? 'bg-green-600' : 'bg-red-600'}`} />
               {product.inStock ? "In Stock and ready to ship" : "Out of Stock"}
             </p>
 
             {/* Trust row */}
-            <div className="mt-8 grid grid-cols-3 gap-3 border-t border-stone-200 pt-6 text-center dark:border-navy-800">
+            <div className="mt-8 grid grid-cols-3 gap-3 border-t border-stone-200 pt-6 text-center">
               {["Free Shipping", "30-Night Trial", "Secure Checkout"].map((label) => (
-                <div key={label} className="text-xs font-medium text-stone-500 dark:text-navy-400">
+                <div key={label} className="text-xs font-medium text-stone-500">
                   {label}
                 </div>
               ))}

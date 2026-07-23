@@ -81,7 +81,7 @@ export default function ShopPage() {
   const FilterGroups = () => (
     <>
       <div>
-        <h3 className="text-sm font-semibold text-stone-900 dark:text-navy-100">Size</h3>
+        <h3 className="text-sm font-semibold text-stone-900">Size</h3>
         <ul className="mt-3 space-y-2.5">
           {sizes.map((size) => (
             <li key={size} className="flex items-center gap-2.5">
@@ -92,7 +92,7 @@ export default function ShopPage() {
                 onChange={() => toggleSize(size)}
                 className="h-4 w-4 rounded border-stone-300 text-accent-500 focus:ring-accent-300"
               />
-              <label htmlFor={`size-${size}`} className="text-sm text-stone-600 dark:text-navy-400">
+              <label htmlFor={`size-${size}`} className="text-sm text-stone-600">
                 {size}
               </label>
             </li>
@@ -101,7 +101,7 @@ export default function ShopPage() {
       </div>
 
       <div>
-        <h3 className="text-sm font-semibold text-stone-900 dark:text-navy-100">Price Range</h3>
+        <h3 className="text-sm font-semibold text-stone-900">Price Range</h3>
         <ul className="mt-3 space-y-2.5">
           {priceRanges.map((range) => (
             <li key={range.label} className="flex items-center gap-2.5">
@@ -113,7 +113,7 @@ export default function ShopPage() {
                 onChange={() => setSelectedPrice(range.label)}
                 className="h-4 w-4 border-stone-300 text-accent-500 focus:ring-accent-300"
               />
-              <label htmlFor={`price-${range.label}`} className="text-sm text-stone-600 dark:text-navy-400">
+              <label htmlFor={`price-${range.label}`} className="text-sm text-stone-600">
                 {range.label}
               </label>
             </li>
@@ -123,7 +123,7 @@ export default function ShopPage() {
 
       <button
         onClick={clearFilters}
-        className="w-full rounded-full border border-stone-300 py-2.5 text-sm font-medium text-stone-600 transition-colors hover:border-accent-400 hover:text-accent-600 dark:border-navy-700 dark:text-navy-400"
+        className="w-full rounded-full border border-stone-300 py-2.5 text-sm font-medium text-stone-600 transition-colors hover:border-accent-400 hover:text-accent-600"
       >
         Clear Filters {activeFilterCount > 0 && `(${activeFilterCount})`}
       </button>
@@ -137,8 +137,8 @@ export default function ShopPage() {
           <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
           Collection
         </span>
-        <h1 className="mt-3 font-serif text-4xl tracking-tight text-stone-900 dark:text-navy-100">Shop All Bedding</h1>
-        <p className="mt-2 text-sm text-stone-500 dark:text-navy-400">{filteredProducts.length} products</p>
+        <h1 className="mt-3 font-serif text-4xl tracking-tight text-stone-900">Shop All Bedding</h1>
+        <p className="mt-2 text-sm text-stone-500">{filteredProducts.length} products</p>
       </div>
 
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-[240px_1fr]">
@@ -152,7 +152,7 @@ export default function ShopPage() {
           <div className="mb-6 flex items-center justify-between gap-4 lg:hidden">
             <button
               onClick={() => setMobileFiltersOpen(true)}
-              className="flex items-center gap-2 rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700 dark:border-navy-700 dark:text-navy-300"
+              className="flex items-center gap-2 rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-700"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-4 w-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
@@ -162,7 +162,7 @@ export default function ShopPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="rounded-full border border-stone-300 bg-white px-4 py-2 text-sm text-stone-600 focus:border-accent-400 focus:outline-none focus:ring-2 focus:ring-accent-100 dark:border-navy-700 dark:bg-navy-900 dark:text-navy-300"
+              className="rounded-full border border-stone-300 bg-white px-4 py-2 text-sm text-stone-600 focus:border-accent-400 focus:outline-none focus:ring-2 focus:ring-accent-100"
             >
               {sortOptions.map((opt) => (
                 <option key={opt}>{opt}</option>
@@ -174,7 +174,7 @@ export default function ShopPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="rounded-full border border-stone-300 bg-white px-4 py-2 text-sm text-stone-600 focus:border-accent-400 focus:outline-none focus:ring-2 focus:ring-accent-100 dark:border-navy-700 dark:bg-navy-900 dark:text-navy-300"
+              className="rounded-full border border-stone-300 bg-white px-4 py-2 text-sm text-stone-600 focus:border-accent-400 focus:outline-none focus:ring-2 focus:ring-accent-100"
             >
               {sortOptions.map((opt) => (
                 <option key={opt}>{opt}</option>
@@ -185,19 +185,19 @@ export default function ShopPage() {
           {loading ? (
             <div className="grid grid-cols-2 gap-5 sm:grid-cols-3">
               {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="animate-pulse overflow-hidden rounded-2xl border border-stone-200 bg-white dark:border-navy-800 dark:bg-navy-900">
-                  <div className="aspect-[4/5] w-full bg-stone-100 dark:bg-navy-800" />
+                <div key={i} className="animate-pulse overflow-hidden rounded-2xl border border-stone-200 bg-white">
+                  <div className="aspect-[4/5] w-full bg-stone-100" />
                   <div className="space-y-2 p-4">
-                    <div className="h-3 w-3/4 rounded bg-stone-100 dark:bg-navy-800" />
-                    <div className="h-3 w-1/2 rounded bg-stone-100 dark:bg-navy-800" />
+                    <div className="h-3 w-3/4 rounded bg-stone-100" />
+                    <div className="h-3 w-1/2 rounded bg-stone-100" />
                   </div>
                 </div>
               ))}
             </div>
           ) : filteredProducts.length === 0 ? (
-            <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-stone-300 py-20 text-center dark:border-navy-700">
-              <p className="text-sm font-medium text-stone-700 dark:text-navy-300">No products match your filters</p>
-              <button onClick={clearFilters} className="mt-3 text-sm font-medium text-accent-600 hover:text-accent-700 dark:text-accent-400">
+            <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-stone-300 py-20 text-center">
+              <p className="text-sm font-medium text-stone-700">No products match your filters</p>
+              <button onClick={clearFilters} className="mt-3 text-sm font-medium text-accent-600 hover:text-accent-700">
                 Clear filters
               </button>
             </div>
@@ -221,10 +221,10 @@ export default function ShopPage() {
       {mobileFiltersOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-black/40" onClick={() => setMobileFiltersOpen(false)} />
-          <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] overflow-y-auto bg-white p-6 shadow-xl dark:bg-navy-950">
+          <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] overflow-y-auto bg-white p-6 shadow-xl">
             <div className="mb-6 flex items-center justify-between">
-              <h2 className="text-base font-semibold text-stone-900 dark:text-navy-100">Filters</h2>
-              <button onClick={() => setMobileFiltersOpen(false)} className="rounded-md p-1.5 text-stone-500 hover:bg-stone-100 dark:text-navy-400 dark:hover:bg-navy-900">
+              <h2 className="text-base font-semibold text-stone-900">Filters</h2>
+              <button onClick={() => setMobileFiltersOpen(false)} className="rounded-md p-1.5 text-stone-500 hover:bg-stone-100">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="h-5 w-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -233,7 +233,7 @@ export default function ShopPage() {
             <div className="space-y-8">
               <FilterGroups />
             </div>
-            <button onClick={() => setMobileFiltersOpen(false)} className="mt-6 w-full rounded-full bg-stone-900 py-3 text-sm font-medium text-white hover:bg-stone-800 dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-gold-400">
+            <button onClick={() => setMobileFiltersOpen(false)} className="mt-6 w-full rounded-full bg-stone-900 py-3 text-sm font-medium text-white hover:bg-stone-800">
               Show {filteredProducts.length} Results
             </button>
           </div>

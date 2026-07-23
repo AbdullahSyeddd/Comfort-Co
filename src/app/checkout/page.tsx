@@ -81,8 +81,8 @@ export default function CheckoutPage() {
   if (items.length === 0) {
     return (
       <div className="mx-auto flex max-w-2xl flex-col items-center px-6 py-24 text-center">
-        <h1 className="font-serif text-3xl text-stone-900 dark:text-navy-100">Your cart is empty</h1>
-        <p className="mt-2 text-sm text-stone-500 dark:text-navy-400">Add some items before checking out.</p>
+        <h1 className="font-serif text-3xl text-stone-900">Your cart is empty</h1>
+        <p className="mt-2 text-sm text-stone-500">Add some items before checking out.</p>
         <Link href="/shop" className="btn-primary mt-6">
           Go to Shop
         </Link>
@@ -92,14 +92,14 @@ export default function CheckoutPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
-      <h1 className="font-serif text-4xl tracking-tight text-stone-900 dark:text-navy-100">Checkout</h1>
+      <h1 className="font-serif text-4xl tracking-tight text-stone-900">Checkout</h1>
 
       <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_1fr]">
         {/* Left: forms */}
         <div className="space-y-10">
           {/* Contact */}
           <section>
-            <h2 className="text-xs font-semibold uppercase tracking-widest text-stone-900 dark:text-navy-100">Contact Information</h2>
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-stone-900">Contact Information</h2>
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <input
                 name="name"
@@ -130,7 +130,7 @@ export default function CheckoutPage() {
 
           {/* Shipping */}
           <section>
-            <h2 className="text-xs font-semibold uppercase tracking-widest text-stone-900 dark:text-navy-100">Shipping Address</h2>
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-stone-900">Shipping Address</h2>
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <input
                 name="address"
@@ -188,14 +188,14 @@ export default function CheckoutPage() {
 
           {/* Payment — Cash on Delivery only */}
           <section>
-            <h2 className="text-xs font-semibold uppercase tracking-widest text-stone-900 dark:text-navy-100">Payment Method</h2>
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-stone-900">Payment Method</h2>
             <div className="mt-4">
-              <div className="flex items-center justify-between rounded-xl border border-accent-400 bg-accent-50/50 px-4 py-3.5 dark:border-accent-500/40 dark:bg-accent-500/10">
+              <div className="flex items-center justify-between rounded-xl border border-accent-400 bg-accent-50/50 px-4 py-3.5">
                 <span className="flex items-center gap-3">
                   <span className="flex h-4 w-4 items-center justify-center rounded-full border-4 border-accent-500" />
-                  <span className="text-sm font-medium text-stone-800 dark:text-navy-200">Cash on Delivery</span>
+                  <span className="text-sm font-medium text-stone-800">Cash on Delivery</span>
                 </span>
-                <span className="text-xs text-stone-400 dark:text-navy-500">Pay when your order arrives</span>
+                <span className="text-xs text-stone-400">Pay when your order arrives</span>
               </div>
             </div>
           </section>
@@ -203,21 +203,21 @@ export default function CheckoutPage() {
 
         {/* Right: order summary — now pulled from real cart */}
         <div className="card-premium h-fit p-6">
-          <h2 className="text-base font-semibold text-stone-900 dark:text-navy-100">Order Summary</h2>
+          <h2 className="text-base font-semibold text-stone-900">Order Summary</h2>
 
           <ul className="mt-5 space-y-4">
             {items.map((item) => (
               <li key={item.id} className="flex items-center gap-3">
-                <div className="relative h-16 w-14 shrink-0 overflow-hidden rounded-lg bg-stone-100 dark:bg-navy-800">
+                <div className="relative h-16 w-14 shrink-0 overflow-hidden rounded-lg bg-stone-100">
                   <Image src={item.image} alt={item.title} fill className="object-cover" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-stone-800 dark:text-navy-200">{item.title}</p>
-                  <p className="text-xs text-stone-400 dark:text-navy-500">
+                  <p className="text-sm font-medium text-stone-800">{item.title}</p>
+                  <p className="text-xs text-stone-400">
                     {item.size} · Qty {item.quantity}
                   </p>
                 </div>
-                <p className="font-serif text-base text-stone-900 dark:text-navy-100">
+                <p className="font-serif text-base text-stone-900">
                   Rs. {(item.price * item.quantity).toLocaleString()}
                 </p>
               </li>
@@ -225,27 +225,27 @@ export default function CheckoutPage() {
           </ul>
 
           {/* Totals */}
-          <div className="mt-6 space-y-2.5 border-t border-stone-200 pt-6 text-sm dark:border-navy-800">
-            <div className="flex justify-between text-stone-500 dark:text-navy-400">
+          <div className="mt-6 space-y-2.5 border-t border-stone-200 pt-6 text-sm">
+            <div className="flex justify-between text-stone-500">
               <span>Subtotal</span>
               <span>Rs. {cartTotal.toLocaleString()}</span>
             </div>
-            <div className="flex justify-between text-stone-500 dark:text-navy-400">
+            <div className="flex justify-between text-stone-500">
               <span>Shipping</span>
               <span>{shipping === 0 ? "Free" : `Rs. ${shipping}`}</span>
             </div>
-            <div className="flex justify-between text-stone-500 dark:text-navy-400">
+            <div className="flex justify-between text-stone-500">
               <span>Estimated Tax</span>
               <span>Rs. {tax.toLocaleString()}</span>
             </div>
-            <div className="flex justify-between border-t border-stone-200 pt-3 text-base font-semibold text-stone-900 dark:border-navy-800 dark:text-navy-100">
+            <div className="flex justify-between border-t border-stone-200 pt-3 text-base font-semibold text-stone-900">
               <span>Total</span>
               <span>Rs. {total.toLocaleString()}</span>
             </div>
           </div>
 
           {error && (
-            <p className="mt-4 rounded-lg bg-red-50 px-4 py-2.5 text-center text-sm text-red-700 dark:bg-red-950/40 dark:text-red-400">
+            <p className="mt-4 rounded-lg bg-red-50 px-4 py-2.5 text-center text-sm text-red-700">
               {error}
             </p>
           )}
@@ -258,7 +258,7 @@ export default function CheckoutPage() {
             {placing ? "Placing Order..." : "Place Order"}
           </button>
 
-          <p className="mt-4 text-center text-xs text-stone-400 dark:text-navy-500">
+          <p className="mt-4 text-center text-xs text-stone-400">
             <Link href="/cart" className="hover:text-accent-600">
               ← Back to Cart
             </Link>

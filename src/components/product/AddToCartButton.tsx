@@ -29,7 +29,7 @@ export default function AddToCartButton({ id, title, price, size, image, inStock
       className={`mt-10 flex w-full items-center justify-center gap-2 rounded-full py-4 text-base font-medium text-white shadow-[0_1px_2px_rgba(0,0,0,0.06)] transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50 ${
         added
           ? "bg-green-700"
-          : "bg-stone-900 hover:-translate-y-0.5 hover:bg-stone-800 hover:shadow-lg hover:shadow-stone-900/15 dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-gold-400"
+          : "bg-stone-900 hover:-translate-y-0.5 hover:bg-stone-800 hover:shadow-lg hover:shadow-stone-900/15"
       }`}
     >
       {added ? "Added to Cart ✓" : inStock ? "Add to Cart" : "Out of Stock"}

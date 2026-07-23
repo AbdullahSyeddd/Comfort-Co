@@ -1,16 +1,16 @@
 export default function PrivacyPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 lg:px-8">
-      <h1 className="font-serif text-4xl tracking-tight text-stone-900 dark:text-navy-100">
+      <h1 className="font-serif text-4xl tracking-tight text-stone-900">
         Privacy Policy
       </h1>
-      <p className="mt-2 text-sm text-stone-400 dark:text-navy-500">Last updated: July 2026</p>
+      <p className="mt-2 text-sm text-stone-400">Last updated: July 2026</p>
 
-      <div className="prose-stone mt-10 space-y-8 text-sm leading-relaxed text-stone-600 dark:text-navy-400">
+      <div className="prose-stone mt-10 space-y-8 text-sm leading-relaxed text-stone-600">
         <section>
-          <h2 className="text-lg font-semibold text-stone-900 dark:text-navy-100">1. Introduction</h2>
+          <h2 className="text-lg font-semibold text-stone-900">1. Introduction</h2>
           <p className="mt-2">
-            Linen &amp; Loom ("we," "us," or "our") respects your privacy and
+            Comfort and Co ("we," "us," or "our") respects your privacy and
             is committed to protecting the personal information you share
             with us. This policy explains how we collect, use, and safeguard
             your data when you visit our website or make a purchase.
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-stone-900 dark:text-navy-100">
+          <h2 className="text-lg font-semibold text-stone-900">
             2. Information We Collect
           </h2>
           <p className="mt-2">
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-stone-900 dark:text-navy-100">
+          <h2 className="text-lg font-semibold text-stone-900">
             3. How We Use Your Information
           </h2>
           <p className="mt-2">
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-stone-900 dark:text-navy-100">
+          <h2 className="text-lg font-semibold text-stone-900">
             4. Sharing Your Information
           </h2>
           <p className="mt-2">
@@ -55,7 +55,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-stone-900 dark:text-navy-100">5. Cookies</h2>
+          <h2 className="text-lg font-semibold text-stone-900">5. Cookies</h2>
           <p className="mt-2">
             Our website uses cookies to enhance your browsing experience,
             analyze site traffic, and remember your preferences. You can
@@ -64,21 +64,21 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-stone-900 dark:text-navy-100">6. Your Rights</h2>
+          <h2 className="text-lg font-semibold text-stone-900">6. Your Rights</h2>
           <p className="mt-2">
             You have the right to access, correct, or delete your personal
             information at any time. To exercise these rights, please
-            contact us at hello@linenandloom.com.
+            contact us at hello@comfortandco.com.
           </p>
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-stone-900 dark:text-navy-100">
+          <h2 className="text-lg font-semibold text-stone-900">
             7. Contact Us
           </h2>
           <p className="mt-2">
             If you have any questions about this Privacy Policy, please
-            reach out to us at hello@linenandloom.com or +1 (800) 555-0192.
+            reach out to us at hello@comfortandco.com or +1 (800) 555-0192.
           </p>
         </section>
       </div>

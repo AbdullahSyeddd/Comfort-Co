@@ -62,23 +62,23 @@ function SignupForm() {
           <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
           Join us
         </span>
-        <h1 className="mt-4 font-serif text-4xl tracking-tight text-stone-900 dark:text-navy-100">
+        <h1 className="mt-4 font-serif text-4xl tracking-tight text-stone-900">
           Create Account
         </h1>
-        <p className="mt-2 text-sm text-stone-500 dark:text-navy-400">
+        <p className="mt-2 text-sm text-stone-500">
           Track orders and save your favorites for later.
         </p>
       </div>
 
       <form onSubmit={handleSubmit} className="card-premium mt-8 space-y-5 p-8">
         {error && (
-          <p className="rounded-lg bg-red-50 px-4 py-2.5 text-sm text-red-700 dark:bg-red-950/40 dark:text-red-400">
+          <p className="rounded-lg bg-red-50 px-4 py-2.5 text-sm text-red-700">
             {error}
           </p>
         )}
 
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-stone-700 dark:text-navy-300">
+          <label htmlFor="name" className="block text-sm font-medium text-stone-700">
             Full Name
           </label>
           <input
@@ -92,7 +92,7 @@ function SignupForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-stone-700 dark:text-navy-300">
+          <label htmlFor="email" className="block text-sm font-medium text-stone-700">
             Email
           </label>
           <input
@@ -106,7 +106,7 @@ function SignupForm() {
         </div>
 
         <div>
-          <label htmlFor="password" className="block text-sm font-medium text-stone-700 dark:text-navy-300">
+          <label htmlFor="password" className="block text-sm font-medium text-stone-700">
             Password
           </label>
           <input
@@ -117,16 +117,16 @@ function SignupForm() {
             onChange={(e) => setForm((p) => ({ ...p, password: e.target.value }))}
             className="input-premium mt-1.5"
           />
-          <p className="mt-1.5 text-xs text-stone-400 dark:text-navy-500">At least 8 characters.</p>
+          <p className="mt-1.5 text-xs text-stone-400">At least 8 characters.</p>
         </div>
 
         <button type="submit" disabled={loading} className="btn-primary w-full disabled:opacity-60">
           {loading ? "Creating account..." : "Sign Up"}
         </button>
 
-        <p className="text-center text-sm text-stone-500 dark:text-navy-400">
+        <p className="text-center text-sm text-stone-500">
           Already have an account?{" "}
-          <Link href="/login" className="font-medium text-accent-600 hover:text-accent-700 dark:text-accent-400">
+          <Link href="/login" className="font-medium text-accent-600 hover:text-accent-700">
             Log in
           </Link>
         </p>

@@ -2,15 +2,15 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-stone-200 bg-stone-50 dark:border-navy-800 dark:bg-navy-900/40">
+    <footer className="border-t border-stone-200 bg-stone-50">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           {/* Brand */}
           <div className="md:col-span-1">
-            <span className="font-serif text-xl tracking-tight text-stone-900 dark:text-navy-100">
-              Linen<span className="italic text-accent-500">&amp;Loom</span>
+            <span className="font-serif text-xl tracking-tight text-stone-900">
+              Comfort<span className="italic text-accent-500"> and Co</span>
             </span>
-            <p className="mt-3 text-sm leading-relaxed text-stone-500 dark:text-navy-400">
+            <p className="mt-3 text-sm leading-relaxed text-stone-500">
               Thoughtfully woven bedding, made from premium natural fibers for
               a better night's sleep.
             </p>
@@ -20,7 +20,7 @@ export default function Footer() {
                   key={social}
                   href="#"
                   aria-label={social}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 text-stone-500 transition-colors hover:border-accent-400 hover:text-accent-600 dark:border-navy-700 dark:text-navy-400"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 text-stone-500 transition-colors hover:border-accent-400 hover:text-accent-600"
                 >
                   <span className="text-xs font-semibold">{social[0]}</span>
                 </a>
@@ -30,7 +30,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-stone-900 dark:text-navy-100">Quick Links</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-stone-900">Quick Links</h3>
             <ul className="mt-4 space-y-3">
               {[
                 { label: "Home", href: "/" },
@@ -52,8 +52,8 @@ export default function Footer() {
 
           {/* Customer support */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-stone-900 dark:text-navy-100">Customer Support</h3>
-            <ul className="mt-4 space-y-3 text-sm text-stone-500 dark:text-navy-400">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-stone-900">Customer Support</h3>
+            <ul className="mt-4 space-y-3 text-sm text-stone-500">
               <li>
                 <Link href="/privacy" className="transition-colors hover:text-accent-600">
                   Privacy Policy
@@ -63,8 +63,8 @@ export default function Footer() {
               <li>Size Guide</li>
               <li>FAQs</li>
               <li className="pt-2">
-                <a href="mailto:hello@linenandloom.com" className="hover:text-accent-600">
-                  hello@linenandloom.com
+                <a href="mailto:hello@comfortandco.com" className="hover:text-accent-600">
+                  hello@comfortandco.com
                 </a>
               </li>
               <li>+1 (800) 555-0192</li>
@@ -73,8 +73,8 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-stone-900 dark:text-navy-100">Stay in Touch</h3>
-            <p className="mt-4 text-sm text-stone-500 dark:text-navy-400">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-stone-900">Stay in Touch</h3>
+            <p className="mt-4 text-sm text-stone-500">
               Get 10% off your first order and early access to new arrivals.
             </p>
             <form className="mt-4 flex gap-2">
@@ -85,7 +85,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="shrink-0 rounded-full bg-stone-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-stone-800 dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-gold-400"
+                className="shrink-0 rounded-full bg-stone-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-stone-800"
               >
                 Join
               </button>
@@ -93,11 +93,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-stone-200 pt-8 dark:border-navy-800 sm:flex-row">
-          <p className="text-xs text-stone-400 dark:text-navy-500">
-            © {new Date().getFullYear()} Linen &amp; Loom. All rights reserved.
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-stone-200 pt-8 sm:flex-row">
+          <p className="text-xs text-stone-400">
+            © {new Date().getFullYear()} Comfort and Co. All rights reserved.
           </p>
-          <div className="flex gap-5 text-xs font-medium text-stone-400 dark:text-navy-500">
+          <div className="flex gap-5 text-xs font-medium text-stone-400">
             <span>Visa</span>
             <span>Mastercard</span>
             <span>PayPal</span>

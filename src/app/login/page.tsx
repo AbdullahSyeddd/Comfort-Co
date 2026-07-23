@@ -43,23 +43,23 @@ function LoginForm() {
           <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
           Welcome back
         </span>
-        <h1 className="mt-4 font-serif text-4xl tracking-tight text-stone-900 dark:text-navy-100">
+        <h1 className="mt-4 font-serif text-4xl tracking-tight text-stone-900">
           Log In
         </h1>
-        <p className="mt-2 text-sm text-stone-500 dark:text-navy-400">
+        <p className="mt-2 text-sm text-stone-500">
           Sign in to view your orders and wishlist.
         </p>
       </div>
 
       <form onSubmit={handleSubmit} className="card-premium mt-8 space-y-5 p-8">
         {error && (
-          <p className="rounded-lg bg-red-50 px-4 py-2.5 text-sm text-red-700 dark:bg-red-950/40 dark:text-red-400">
+          <p className="rounded-lg bg-red-50 px-4 py-2.5 text-sm text-red-700">
             {error}
           </p>
         )}
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-stone-700 dark:text-navy-300">
+          <label htmlFor="email" className="block text-sm font-medium text-stone-700">
             Email
           </label>
           <input
@@ -73,7 +73,7 @@ function LoginForm() {
         </div>
 
         <div>
-          <label htmlFor="password" className="block text-sm font-medium text-stone-700 dark:text-navy-300">
+          <label htmlFor="password" className="block text-sm font-medium text-stone-700">
             Password
           </label>
           <input
@@ -90,9 +90,9 @@ function LoginForm() {
           {loading ? "Signing in..." : "Log In"}
         </button>
 
-        <p className="text-center text-sm text-stone-500 dark:text-navy-400">
+        <p className="text-center text-sm text-stone-500">
           Don&apos;t have an account?{" "}
-          <Link href="/signup" className="font-medium text-accent-600 hover:text-accent-700 dark:text-accent-400">
+          <Link href="/signup" className="font-medium text-accent-600 hover:text-accent-700">
             Sign up
           </Link>
         </p>

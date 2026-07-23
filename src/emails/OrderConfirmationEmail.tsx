@@ -36,7 +36,7 @@ export default function OrderConfirmationEmail({
       <div style={{ maxWidth: 560, margin: "0 auto", backgroundColor: "#ffffff", borderRadius: 16, overflow: "hidden", border: "1px solid #e7e5e4" }}>
         <div style={{ padding: "32px 40px", borderBottom: "1px solid #e7e5e4" }}>
           <p style={{ margin: 0, fontSize: 22, color: "#1c1917" }}>
-            Linen <em style={{ color: "#ab7333" }}>&amp; Loom</em>
+            Comfort <em style={{ color: "#ab7333" }}>and Co</em>
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export default function OrderConfirmationEmail({
 
         <div style={{ padding: "20px 40px", backgroundColor: "#fafaf9", fontFamily: "Arial, sans-serif" }}>
           <p style={{ margin: 0, fontSize: 12, color: "#a8a29e" }}>
-            &copy; {new Date().getFullYear()} Linen &amp; Loom. Questions? Reply to this email.
+            &copy; {new Date().getFullYear()} Comfort and Co. Questions? Reply to this email.
           </p>
         </div>
       </div>
