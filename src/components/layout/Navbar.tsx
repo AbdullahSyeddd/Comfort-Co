@@ -6,6 +6,7 @@ import { useSession, signOut } from "next-auth/react";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
 import { useTheme } from "@/context/ThemeContext";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -45,12 +46,14 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-stone-200/70 bg-white/80 backdrop-blur-lg dark:border-navy-800/70 dark:bg-navy-950/80">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        {/* Logo */}
-        <Link href="/" className="flex items-baseline gap-1">
-          <span className="font-serif text-2xl tracking-tight text-stone-900 dark:text-navy-100">
-            Linen<span className="italic text-accent-500">&amp;Loom</span>
-          </span>
-        </Link>
+<Image
+  src="/images/LOGO.png"
+  alt="Comfort & Co"
+  width={40}
+  height={40}
+  priority
+  className="h-9 w-9"
+/>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-10 md:flex">

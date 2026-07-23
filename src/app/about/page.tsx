@@ -36,7 +36,7 @@ export default function AboutPage() {
       <div className="mt-12 aspect-[16/7] w-full overflow-hidden rounded-3xl bg-stone-100 shadow-xl shadow-stone-900/5 dark:bg-navy-800 dark:shadow-black/30">
         <img
           src="https://placehold.co/1200x525/e3e6df/78716c?text=Our+Workshop"
-          alt="Linen & Loom workshop"
+          alt="Comfort & Co workshop"
           className="h-full w-full object-cover"
         />
       </div>

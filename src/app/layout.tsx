@@ -29,7 +29,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Linen & Loom | Premium Bedding Online",
+  title: "Comfort & Co | Premium Bedding Online",
   description:
     "Shop premium quality bedsheets, duvet covers, and bedding sets crafted from natural fibers.",
 };
