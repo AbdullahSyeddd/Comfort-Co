@@ -68,7 +68,7 @@ export default function ProductCard({ id, image, title, price, size }: ProductCa
             className={`absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 shadow-sm transition-all duration-300 ${
               wishlisted
                 ? "text-accent-500 opacity-100"
-                : "text-stone-500 opacity-0 hover:text-accent-500 group-hover:opacity-100"
+                : "text-stone-500 opacity-100 hover:text-accent-500 md:opacity-0 md:group-hover:opacity-100"
             }`}
           >
             <svg
@@ -83,8 +83,8 @@ export default function ProductCard({ id, image, title, price, size }: ProductCa
             </svg>
           </button>
 
-          {/* Hover overlay Add to Cart */}
-          <div className="absolute inset-x-0 bottom-0 translate-y-full bg-white/95 p-3 backdrop-blur-sm transition-transform duration-300 ease-out group-hover:translate-y-0">
+          {/* Add to Cart — always visible on touch devices, hover-reveal on desktop */}
+          <div className="absolute inset-x-0 bottom-0 translate-y-0 bg-white/95 p-3 backdrop-blur-sm transition-transform duration-300 ease-out md:translate-y-full md:group-hover:translate-y-0">
             <button
               onClick={handleAddToCart}
               className={`flex w-full items-center justify-center gap-2 rounded-full py-2.5 text-sm font-medium text-white transition-colors ${
