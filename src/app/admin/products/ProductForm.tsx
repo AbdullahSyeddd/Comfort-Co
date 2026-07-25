@@ -102,11 +102,17 @@ export default function ProductForm({
           id="imageUrl"
           name="imageUrl"
           type="url"
+          pattern="https?://.+"
+          title="Please enter a valid HTTP/HTTPS URL (e.g. https://example.com/image.jpg), not a local file path."
           defaultValue={product?.imageUrl}
           required
           className="input-premium mt-1.5"
           placeholder="https://..."
         />
+        <p className="mt-1 text-xs text-stone-500">
+          Must be a public HTTP/HTTPS link (e.g. from an image host). Local file paths like{" "}
+          <code>C:\Users\...</code> are not supported.
+        </p>
         {state?.errors?.imageUrl && <p className="mt-1 text-xs text-red-600">{state.errors.imageUrl}</p>}
       </div>
 

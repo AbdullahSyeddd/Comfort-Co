@@ -23,7 +23,18 @@ function parseProductForm(formData: FormData) {
   const errors: Record<string, string> = {};
   if (!title) errors.title = "Title is required.";
   if (!size) errors.size = "Size is required.";
-  if (!imageUrl) errors.imageUrl = "Image URL is required.";
+  if (!imageUrl) {
+    errors.imageUrl = "Image URL is required.";
+  } else {
+    try {
+      const parsed = new URL(imageUrl);
+      if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {
+        errors.imageUrl = "Please enter a valid HTTP/HTTPS URL.";
+      }
+    } catch {
+      errors.imageUrl = "Please enter a valid HTTP/HTTPS URL.";
+    }
+  }
 
   const price = Number(priceRaw);
   if (!priceRaw || Number.isNaN(price) || price <= 0) {
